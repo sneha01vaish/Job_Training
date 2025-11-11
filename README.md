@@ -5,7 +5,7 @@ A real-time training job monitoring system built with FastAPI (Python) and React
 ## Project Structure
 
 ```
-project/
+Job_Training/
 ├── backend/              # FastAPI application
 │   ├── main.py          # Main FastAPI app with REST and WebSocket endpoints
 │   ├── models.py        # Pydantic models
