@@ -300,7 +300,7 @@ The application demonstrates:
 - Progress updates are smooth and continuous
 - The WebSocket connection closes automatically when training completes
 
-
+## Working Video URL (Showing UI Working)- [## Video](https://drive.google.com/file/d/1wGIYXDUlKobYnDC8aFNe5ZKBuzp6pbvD/view?usp=sharing)
 
 **Name:** Sneha
 **Date:** 2025
