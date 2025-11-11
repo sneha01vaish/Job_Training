@@ -17,7 +17,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Store active jobs
 jobs = {}
 
 @app.get("/")
@@ -45,10 +44,6 @@ async def start_training():
 
 @app.websocket("/ws/training/{job_id}")
 async def training_websocket(websocket: WebSocket, job_id: str):
-    """
-    WebSocket endpoint that simulates a 60-second training process
-    Sends updates every 2 seconds
-    """
     await websocket.accept()
 
     try:
@@ -64,12 +59,11 @@ async def training_websocket(websocket: WebSocket, job_id: str):
         # Get the job
         job = jobs[job_id]
 
-        # Update status to RUNNING
         job.status = "RUNNING"
         job.log_message = "Training started - initializing model..."
         await websocket.send_json(job.model_dump())
 
-        # Simulate 60-second training (30 updates, every 2 seconds)
+        # Simulate 60-second training
         total_steps = 30
 
         for step in range(1, total_steps + 1):
